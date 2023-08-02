@@ -2,7 +2,7 @@ var pensamientos = [
     
 ]
 function datos(){
-    fetch ("http://mammoth-ancient-egg.glitch.me/posts").then (response => response.json()).then(pensamientos=>{
+    fetch ("https://mammoth-ancient-egg.glitch.me/posts").then (response => response.json()).then(pensamientos=>{
         console.log (pensamientos)
         pensamientos.forEach(element => {agregar(element.title,element.content,element.id)
             
@@ -14,7 +14,7 @@ function datos(){
 
 function guardar (texto,imagen){
     const newpensamiento = { id: uuidv4(), title: texto, content: imagen};
-    fetch ("http://mammoth-ancient-egg.glitch.me/posts",{
+    fetch ("https://mammoth-ancient-egg.glitch.me/posts",{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ function cerrar (){
 
 function borrar(idparametro){
     console.log (idparametro) 
-    fetch ("http://mammoth-ancient-egg.glitch.me/posts/"+idparametro,{
+    fetch ("https://mammoth-ancient-egg.glitch.me/posts/"+idparametro,{
         method: 'DELETE'}) 
         .then (response => response.json())
         .then (pensamiento_borrado => console.log (pensamiento_borrado))
